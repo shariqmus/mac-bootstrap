@@ -1,0 +1,10 @@
+# Copies dotfiles to $HOME
+
+---
+- name: Copy dotfiles to home directory
+  copy:
+    src: "{{ item }}"
+    dest: "~/{{ item | basename }}"
+    mode: '0644'
+  with_fileglob:
+    - "{{ role_path }}/files/.*"

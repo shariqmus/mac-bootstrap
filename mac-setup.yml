@@ -1,0 +1,12 @@
+# Main playbook
+
+---
+- name: Setup macOS environment
+  hosts: localhost
+  connection: local
+  become: false  # No need for sudo unless changing system settings
+
+  roles:
+    - homebrew
+    - dotfiles
+    - neovim

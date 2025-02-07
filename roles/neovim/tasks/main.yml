@@ -1,0 +1,14 @@
+---
+- name: Ensure Neovim config directory exists
+  file:
+    path: "~/.config/nvim"
+    state: directory
+    mode: '0755'
+
+- name: Copy Neovim configuration files
+  copy:
+    src: "{{ item }}"
+    dest: "~/.config/nvim/{{ item | basename }}"
+    mode: '0644'
+  with_fileglob:
+    - "{{ role_path }}/files/*"
