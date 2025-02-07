@@ -2,11 +2,13 @@
 Automate the setup of your macOS environment using Ansible. This playbook installs essential tools, configs, and system settings from scratch—perfect for fresh setups or keeping multiple Macs consistent.
 
 ## Features
+```
 ✅ Installs Homebrew and essential CLI tools (e.g., tmux, fzf, neovim)
 ✅ Sets up developer tools (Docker, Git, Python, Node.js, etc.)
 ✅ Configures dotfiles (optional)
 ✅ Automates system preferences (e.g., key repeat speed, Finder settings)
 ✅ Supports idempotent execution (safe to re-run)
+```
 
 ## Prerequisites
 Xcode Command Line Tools (needed for Homebrew)
