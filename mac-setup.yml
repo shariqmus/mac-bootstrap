@@ -7,6 +7,10 @@
   become: false  # No need for sudo unless changing system settings
 
   roles:
+    - macos-prereqs
     - homebrew
-    - dotfiles
+    - dot-files
+    - config-files
+    - macos-defaults
     - neovim
+    - fonts

@@ -1,14 +1,39 @@
 ---
+
 - name: Ensure Neovim config directory exists
   file:
     path: "~/.config/nvim"
     state: directory
     mode: '0755'
 
-- name: Copy Neovim configuration files
+- name: Ensure lua config directory exists
+  file:
+    path: "{{ item }}"
+    state: directory
+    mode: '0755'
+  with_items:
+    - "~/.config/nvim/lua"
+    - "~/.config/nvim/lua/config"
+    - "~/.config/nvim/lua/plugins"
+
+- name: Copy init.lua to Neovim config
   copy:
     src: "{{ item }}"
     dest: "~/.config/nvim/{{ item | basename }}"
     mode: '0644'
-  with_fileglob:
-    - "{{ role_path }}/files/*"
+  with_items:
+    - "{{ role_path }}/files/init.lua"
+
+- name: Find all lua config files
+  find:
+    paths: "{{ role_path }}/files/lua"
+    recurse: yes
+    file_type: file
+  register: lua_files
+
+- name: Copy lua config files to Neovim config
+  copy:
+    src: "{{ item.path }}"
+    dest: "~/.config/nvim/{{ item.path | regex_replace('^' + role_path + '/files/', '') }}"
+    mode: '0644'
+  with_items: "{{ lua_files.files }}"

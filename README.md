@@ -8,6 +8,7 @@ Automate the setup of your macOS environment using Ansible. This playbook instal
 ✅ Configures dotfiles (optional)
 ✅ Automates system preferences (e.g., key repeat speed, Finder settings)
 ✅ Supports idempotent execution (safe to re-run)
+✅ Support Rosetta 2 for Apple Silicon Macs
 ```
 
 ## Prerequisites
@@ -32,7 +33,7 @@ Run the playbook:
 
 
 ```
-ansible-playbook mac-setup.yml --ask-become-pass
+ansible-playbook mac-setup.yml --ask-become-pass --become --become-user <your_mac_user>
 ```
 
 ## Customization
@@ -42,5 +43,4 @@ ansible-playbook mac-setup.yml --ask-become-pass
 
 ### Future Enhancements
 - [ ] Add macOS defaults (dock, trackpad, Finder tweaks)
-- [ ] Support Rosetta 2 for Apple Silicon Macs
 - [ ] Add GUI apps (e.g., VS Code, Slack, Chrome)

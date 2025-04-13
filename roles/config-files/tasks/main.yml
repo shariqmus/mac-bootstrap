@@ -1,0 +1,12 @@
+---
+- name: Check if VSCode config directory exists
+  stat:
+    path: "{{ ansible_env.HOME }}/Library/Application Support/Code/User"
+  register: vscode_config_dir
+
+- name: Copy VSCode settings.json if directory exists
+  copy:
+    src: vscode/settings.json
+    dest: "{{ ansible_env.HOME }}/Library/Application Support/Code/User/settings.json"
+    mode: '0644'
+  when: vscode_config_dir.stat.exists

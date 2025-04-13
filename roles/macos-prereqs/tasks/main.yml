@@ -1,0 +1,7 @@
+---
+- name: Install Rosetta 2 (Apple Silicon only)
+  become: true
+  shell: /usr/sbin/softwareupdate --install-rosetta --agree-to-license
+  args:
+    creates: /Library/Apple/usr/share/rosetta/rosetta
+  when: ansible_facts['architecture'] == "arm64"

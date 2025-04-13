@@ -1,0 +1,15 @@
+{
+    "workbench.sideBar.location": "right",
+    "editor.minimap.enabled": false,
+    "files.autoSave": "afterDelay",
+    "workbench.colorTheme": "Monokai Dimmed",
+    "security.workspace.trust.untrustedFiles": "open",
+
+    // 👇 Set editor font
+    "editor.fontFamily": "'JetBrainsMono Nerd Font', Menlo, Monaco, 'Courier New', monospace",
+    "editor.fontSize": 14,
+
+    // 👇 Set terminal font
+    "terminal.integrated.fontFamily": "'JetBrainsMono Nerd Font'",
+    "terminal.integrated.fontSize": 13
+}
