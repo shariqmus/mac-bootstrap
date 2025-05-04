@@ -27,7 +27,7 @@ sudo pip3 install ansible
 Clone the repository:
 ```
 git clone https://github.com/yourusername/mac-setup-ansible.git  
-cd mac-setup-ansible
+cd mac-bootstrap
 ```
 Run the playbook:
 
