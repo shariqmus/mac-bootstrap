@@ -23,35 +23,71 @@
     name: "{{ item }}"
     state: present
   loop:
-    - neovim
-    - tmux
+    - 1password
+    - awscli
+    - btop
+    - composer
+    - dive
+    - doggo
+    - doggo
     - fzf
-    - ripgrep
-    - zsh
-    - git
-    - jq
     - gawk
+    - gh
+    - git
     - gsed
+    - hashicorp/tap/vault
+    - ijq
+    - jq
+    - jq
+    - k9s
+    - kubecolor
+    - kubectx
+    - kubent
+    - kubernetes-cli 
+    - lsd
+    - neovim
+    - node
+    - php
+    - ripgrep
     - starship
+    - stern
+    - tailspin
+    - telnet
+    - tldr
+    - tmux
+    - tokei
     - tree
+    - trippy
+    - trivy
+    - txn2/tap/kubefwd
+    - watch
+    - yq
+    - zsh
     - zsh-autosuggestions
+    - zsh-syntax-highlighting
+
 
 - name: Install Brew casks (GUI applications)
   homebrew_cask:
     name: "{{ item }}"
     state: present
   loop:
-    # - google-chrome
-    # - visual-studio-code
-    # - iterm2
-    # - slack
-    - rectangle
-    - wezterm
-    - maccy
-    - shottr
     - caffeine
-    - vlc
-    - zoom
+    - docker
+    - font-jetbrains-mono-nerd-font
+    - google-chrome
+    - iterm2
+    - lens
+    - maccy
+    - meld
+    - microsoft-office
     - microsoft-teams
     - raycast
-    - font-jetbrains-mono-nerd-font
+    - rectangle
+    - scroll-reverser
+    - shottr
+    - slack
+    - visual-studio-code
+    - vlc
+    - wezterm
+    - zoom
