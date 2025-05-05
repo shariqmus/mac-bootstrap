@@ -65,6 +65,7 @@
     - zsh
     - zsh-autosuggestions
     - zsh-syntax-highlighting
+    - zsh-vi-mode
 
 
 - name: Install Brew casks (GUI applications)
