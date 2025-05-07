@@ -27,6 +27,7 @@
     - awscli
     - btop
     - composer
+    - dbeaver-community
     - dive
     - doggo
     - doggo
@@ -36,6 +37,7 @@
     - git
     - gsed
     - hashicorp/tap/vault
+    - htop
     - ijq
     - jq
     - jq
@@ -45,6 +47,7 @@
     - kubent
     - kubernetes-cli 
     - lsd
+    - microsoft-remote-desktop
     - neovim
     - node
     - php
@@ -66,7 +69,6 @@
     - zsh-autosuggestions
     - zsh-syntax-highlighting
     - zsh-vi-mode
-
 
 - name: Install Brew casks (GUI applications)
   homebrew_cask:
