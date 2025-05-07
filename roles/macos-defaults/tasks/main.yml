@@ -1,1 +1,23 @@
 # System tweaks (optional)
+---
+- name: Ensure KeyBindings directory exists
+  file:
+    path: "~/Library/KeyBindings"
+    state: directory
+    mode: '0755'
+
+- name: Create DefaultKeyBinding.dict with custom keybindings
+  copy:
+    dest: "~/Library/KeyBindings/DefaultKeyBinding.dict"
+    content: |
+      {
+        "\UF729"  = moveToBeginningOfParagraph:; // home
+        "\UF72B"  = moveToEndOfParagraph:; // end
+        "$\UF729" = moveToBeginningOfParagraphAndModifySelection:; // shift-home
+        "$\UF72B" = moveToEndOfParagraphAndModifySelection:; // shift-end
+        "^\UF729" = moveToBeginningOfDocument:; // ctrl-home
+        "^\UF72B" = moveToEndOfDocument:; // ctrl-end
+        "^$\UF729" = moveToBeginningOfDocumentAndModifySelection:; // ctrl-shift-home
+        "^$\UF72B" = moveToEndOfDocumentAndModifySelection:; // ctrl-shift-end
+      }
+    mode: '0644'
