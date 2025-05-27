@@ -37,6 +37,7 @@
     - git
     - gsed
     - hashicorp/tap/vault
+    - helm
     - htop
     - ijq
     - jq
