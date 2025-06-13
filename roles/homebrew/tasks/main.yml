@@ -49,6 +49,7 @@
     - kubernetes-cli 
     - lsd
     - microsoft-remote-desktop
+    - windows-app
     - neovim
     - node
     - php
