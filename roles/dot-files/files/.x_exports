@@ -1,0 +1,34 @@
+# My Exports
+
+export AWS_DEFAULT_REGION=eu-central-1
+export AWS_PAGER=""
+export DEFAULT_USER=$(whoami)
+export EDITOR=/opt/homebrew/bin/nvim
+export K9S_EDITOR=/opt/homebrew/bin/nvim
+# export GH_TOKEN=
+# export GHUSER=
+# export K9S_CONFIG_DIR=$XDG_DATA_HOME/k9s
+# export TF_VAR_cloudflare_api_token=
+# export CLOUDFLARE_API_TOKEN=$TF_VAR_cloudflare_api_token
+# export XDG_DATA_HOME=/Users/s.mustaquim/Library/Application\ Support
+export DISABLE_MAGIC_FUNCTIONS="true"
+export DOCKER_DEFAULT_PLATFORM=linux/amd64
+
+# History configuration
+HISTSIZE=10000               # Number of commands to keep in memory
+SAVEHIST=10000               # Number of commands to save to .zsh_history
+HISTFILE=~/.zsh_history      # File to store the history
+setopt appendhistory         # Append to history instead of overwriting
+setopt sharehistory          # Share history between sessions
+setopt incappendhistory      # Incrementally append history
+setopt hist_ignore_all_dups  # Ignore duplicate commands
+
+# FZF Customization 
+# Globals:
+export FZF_DEFAULT_OPTS="--height 90%  --layout reverse-list --no-scrollbar"
+# OPTION-C shortcut to change directory: exclude folders
+export FZF_ALT_C_OPTS="--walker-skip .git,node_modules,target,Library,Applications,Pictures,Music,.local,.cache,.Trash"
+# CTRL-T shortcut to search files: exclude folders, preview with bat
+export FZF_CTRL_T_OPTS="--walker-skip .git,node_modules,target,Library,Applications,Pictures,Music,.local,.cache,.Trash --preview 'bat -n --color=always {}'"
+# CTRL-R shortcut to search command history: CTRL-Y to copy the command into clipboard using pbcopy
+export FZF_CTRL_R_OPTS="--bind 'ctrl-y:execute-silent(echo -n {2..} | pbcopy)+abort' --color header:bold --header 'Press CTRL-Y to copy command into clipboard'"

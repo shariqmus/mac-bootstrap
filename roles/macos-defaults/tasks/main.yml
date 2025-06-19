@@ -21,3 +21,10 @@
         "^$\UF72B" = moveToEndOfDocumentAndModifySelection:; // ctrl-shift-end
       }
     mode: '0644'
+
+- name: Set system preferences
+  macos_defaults:
+    - name: "System Preferences"
+      domain: "com.apple.systempreferences"
+      key: "General"
+      value: "Show scroll bars: Always" 

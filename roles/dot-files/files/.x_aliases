@@ -1,0 +1,131 @@
+# My ALIASes
+alias c='clear && export AWS_PROFILE=default'
+alias cdd="cd ~/Personal/github"
+alias cde="cd ~/Job/github"
+alias cdk='cd ~/.ssh'
+alias cl='clear'
+alias cdn="cd ~/Documents"
+alias cdo="cd ~/Downloads"
+alias cdp='cd ~/Personal'
+alias cds="cd ~/Scripts"
+alias cdt="cd /tmp"
+alias chat='ollama run llama3.2:latest'
+alias checkconnect='function _checkconnect(){ nc -zv -G3 $1 $2 };_checkconnect'
+alias chkcert='function _chkcert(){ echo | openssl s_client -connect $1:443 -servername $1 2>/dev/null | openssl x509 -noout -text; };_chkcert'
+alias ct=kubectx
+alias dev='tabset --color yellow dev'
+alias dg='find . | grep -i '
+alias dn='scutil --dns'
+alias downs="open ~/Downloads"
+alias eg='printenv | grep -i '
+alias f='fd --type f --hidden --exclude .git | fzf-tmux -p --reverse | xargs nvim'
+alias ff='killall Chrome'
+alias fleet='~/Applications/Fleet.app/Contents/app/bin/fleet'
+alias ga='git add '
+alias gai='function _gn(){ git add --all && aicommits && git push origin HEAD; };_gn'
+alias gb='git branch '
+alias gc='git commit'
+alias gco='git checkout '
+alias gd='git diff'
+alias gdb="git remote show origin | gawk '/HEAD branch/ {print $NF}'" # Default branch of repo
+alias genpw16='date +%s | sha256sum | base64 | head -c 16 ; echo'
+alias genpw32='date +%s | sha256sum | base64 | head -c 32 ; echo'
+alias get='git '
+alias gg='function _gg(){ git fetch --all --tags && git checkout $1 && git pull; };_gg'
+alias gitls-commits='git log --pretty=format: --name-only | sed '/^$/d' | sort | uniq -c | sort -g'
+alias gk='gitk --all&'
+alias gn='function _gn(){ git save && git done; };_gn'
+alias god='sudo -i'
+alias got='git '
+alias gp='git status; git save; git done;'
+alias gpr='function _gpr(){ TMPVAR=$(echo $2 | tr _ " ") && gh pr create --base $1 --title $TMPVAR --body ""; };_gpr'
+alias grb='git recent-branches'
+alias gs='git status '
+alias gst='git status'
+alias gsw='function _gsw(){ git switch -c $1; };_gsw'
+alias gu='function _gu(){ TMPVAR=$(echo $1 | tr _ " ") && git add --all && git commit -m $TMPVAR && git push origin HEAD; };_gu'
+alias ip="netstat -rn -f inet | awk '/default/ {print \$2;exit}'"
+#alias ipwhois=
+alias k=kubecolor
+#alias k9s='k9s --logoless --refresh 1'
+alias kad="kubecolor delete -f"
+alias kaf="kubecolor apply -f"
+alias kct=kubectx
+alias kd="kubecolor describe"
+alias kev="kubecolor get events --field-selector type=Warning --sort-by=.metadata.creationTimestamp"
+alias kga="kubecolor get all"
+alias kgd="kubecolor get deployments"
+alias kge="kubecolor get ep"
+alias kgi="kubecolor get ingress"
+alias kgn="kubecolor get nodes"
+alias kgp="kubecolor get pods"
+alias kgs="kubecolor get service" 
+alias klog='function _klog(){ stern $1 | tspin; };_klog'
+alias kns=kubens
+alias l='lsd -l'
+alias lens='/Applications/Lens.app/Contents/MacOS/Lens'
+alias ll="ls -alt | less"
+alias lr='find . -maxdepth 1 -not -path "./.git/*" -type f -exec stat -f "%m %N" "{}" \; | sort -nr | head'
+alias lrr='find . -not -path "./.git/*" -type f -exec stat -f "%m %N" "{}" \; | sort -nr | head'
+alias m="gdb | gawk '{print \$3}'"
+alias myip='curl ifconfig.me'
+alias notes="code ~/Documents"
+alias ns=kubens
+alias nt='/Users/s.mustaquim/Scripts/nt.sh'
+alias vi=nvim
+alias passwords="code ~/Documents/Passwords.md"
+alias pg='ps aux |grep '
+alias recents='find . -ctime -15'
+alias retcode='function _rc(){ curl -s -o /dev/null -I -w "%{http_code}" $1; };_rc'
+alias root='sudo -i'
+alias rot13="tr 'A-Za-z' 'N-ZA-Mn-za-m'"
+alias s='source ~/.zshrc'
+alias scrips="code ~/Scripts"
+alias uao='function _uao(){ mkdir $(basename $1 .zip) && unzip $1 -d $(basename $1 .zip) && code $(basename $1 .zip); };_uao'
+alias viddy='viddy '
+alias viewheaders='function _viewheaders() { curl -s -I "$1" | awk '\''NF'\''; }; _viewheaders'
+alias watch='watch '
+alias zzz="code ~/.zshrc"
+
+function hg() {
+  local query=$1
+  local cmd=$(grep "$query" ~/.zsh_history | fzf)
+  if [[ -n "$cmd" ]]; then
+    print -s "$cmd"  # Add the command to the shell history
+    eval "$cmd"      # Execute the command
+  fi
+}
+
+function ggg() {
+   gg $(gdb | gawk '{print $3}') 
+}
+
+function env-clean() {
+   echo "Unsetting all custom environment variables..."
+   unset PROD_DOMAIN
+   unset $(printenv | grep TF_VAR | awk -F'=' '{print $1}') 2>/dev/null
+   unset $(printenv | grep ARM_ | awk -F'=' '{print $1}') 2>/dev/null
+   unset $(printenv | grep PACKER_ | awk -F'=' '{print $1}') 2>/dev/null
+   unset $(printenv | grep VAULT_ | awk -F'=' '{print $1}') 2>/dev/null
+   unset $(printenv | grep AWS_ | awk -F'=' '{print $1}') 2>/dev/null
+   unset $(printenv | grep OCI_ | awk -F'=' '{print $1}') 2>/dev/null
+   unset $(printenv | grep SP_ | awk -F'=' '{print $1}') 2>/dev/null
+}
+
+function docker-login() {
+   $USER     = ""
+   $PASSWORD = ""
+   echo "Logging in to $USER DockerHub account ..."
+   docker logout
+   docker login -u "$USER" -p "$PASSWORD"
+}
+
+# list versions of softwares
+function v() {
+   git --version   
+   echo -n 'aws version: ' && aws --version
+   echo -n 'kubectl ' && kubectl version --client   
+   echo -n 'python version: ' && python -V 
+   echo -n 'node version: ' && node -v
+   echo -n 'npm version: ' && npm -v
+}

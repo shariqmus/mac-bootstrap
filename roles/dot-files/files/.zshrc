@@ -1,3 +1,6 @@
+source ~/.x_aliases
+source ~/.x_exports
+
 export PATH="/opt/homebrew/bin:$PATH"
 
 source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
