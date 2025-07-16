@@ -1,0 +1,48 @@
+{
+  "ui_font_size": 16,
+  "buffer_font_size": 16,
+  "buffer_font_family": "JetBrainsMono Nerd Font",
+
+  "autosave": "on_focus_change",
+  "format_on_save": "off",
+  "vim_mode": true,
+  "terminal": {
+    "font_family": "JetBrainsMono Nerd Font",
+    "blinking": "off"
+  },
+  "languages": {
+    "C": {
+      "format_on_save": "language_server",
+      "preferred_line_length": 64,
+      "soft_wrap": "preferred_line_length"
+    },
+    "Plain Text": {
+      "show_edit_predictions": false
+    }
+  },
+  "theme": {
+    "mode": "system",
+    "light": "One Light",
+    "dark": "One Dark"
+  },
+  "gutter": {
+    "line_numbers": false
+  },
+  "features": {
+    "edit_prediction_provider": "none"
+  },
+  "show_edit_predictions": false,
+  "edit_predictions": {
+    "disabled_globs": [
+      "**/.env*",
+      "**/*.pem",
+      "**/*.key",
+      "**/*.cert",
+      "**/*.crt",
+      "**/.dev.vars",
+      "**/secrets.yml",
+      "**/*.txt"
+    ]
+  },
+  "show_completions_on_input": false
+}

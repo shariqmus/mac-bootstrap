@@ -10,3 +10,15 @@
     dest: "{{ ansible_env.HOME }}/Library/Application Support/Code/User/settings.json"
     mode: '0644'
   when: vscode_config_dir.stat.exists
+
+- name: Check if Zed config directory exists
+  stat:
+    path: "{{ ansible_env.HOME }}/.config/zed"
+  register: zed_config_dir
+
+- name: Copy Zed settings.json if directory exists
+  copy:
+    src: zed/settings.json
+    dest: "{{ ansible_env.HOME }}/.config/zed/settings.json"
+    mode: '0644'
+  when: zed_config_dir.stat.exists
