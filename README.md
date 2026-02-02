@@ -3,12 +3,12 @@ Automate the setup of your macOS environment using Ansible. This playbook instal
 
 ## Features
 ```
-✅ Installs Homebrew and essential CLI tools (e.g., tmux, fzf, neovim)
-✅ Sets up developer tools (Docker, Git, Python, Node.js, etc.)
-✅ Configures dotfiles (optional)
-✅ Automates system preferences (e.g., key repeat speed, Finder settings)
-✅ Supports idempotent execution (safe to re-run)
-✅ Support Rosetta 2 for Apple Silicon Macs
+Installs Homebrew and essential CLI tools (e.g., tmux, fzf, neovim)
+Sets up developer tools (Docker, Git, Python, Node.js, etc.)
+Configures dotfiles (optional)
+Automates system preferences (e.g., key repeat speed, Finder settings)
+Supports idempotent execution (safe to re-run)
+Support Rosetta 2 for Apple Silicon Macs
 ```
 
 ## Prerequisites
