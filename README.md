@@ -1,5 +1,5 @@
 # MacBook Setup with Ansible 🚀
-Automate the setup of your macOS environment using Ansible. This playbook installs essential tools, configs, and system settings from scratch—perfect for fresh setups or keeping multiple Macs consistent.
+Automate the setup of your macOS environment using Ansible. This playbook installs essential tools, configs, and system settings from scratch, it is perfect for fresh setups or keeping multiple Macs consistent.
 
 ## Features
 ```
