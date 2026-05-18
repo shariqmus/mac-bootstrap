@@ -30,7 +30,6 @@
     - dbeaver-community
     - dive
     - doggo
-    - doggo
     - fzf
     - gawk
     - gh
@@ -48,7 +47,6 @@
     - kubent
     - kubernetes-cli 
     - lsd
-    - microsoft-remote-desktop
     - windows-app
     - neovim
     - node
@@ -58,7 +56,7 @@
     - stern
     - tailspin
     - telnet
-    - tldr
+    - tealdeer
     - tmux
     - tokei
     - tree
@@ -82,6 +80,7 @@
     - font-jetbrains-mono-nerd-font
     - google-chrome
     - iterm2
+    - iina
     - lens
     - maccy
     - meld
